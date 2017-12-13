@@ -1,27 +1,30 @@
 package br.cesed.lsi.projectmanager;
 
+import java.util.ArrayList;
+import java.util.Date;
+
 public class Projeto {
-			
 			private Professor orient;
-			private String nome, descricao;
-			
+			private String tema, descricao;
+			private ArrayList<Aluno> alunos;
+			private Date dataInicio;
+			private ArrayList<String> sugestoesTema;
+			private ArrayList<TarefasHorario> tarefas;
 			
 			/*
-			 * RF3 
+			 * ele é composto por alunos que irão ver a composicao
 			 * 
 			 * 
-O professor deve poder alterar a sua disponibilidade para orientação no sistema;
-O docente, ao acessar a sua pagina de login, deve ser capaz de colocar se está disponível ou não para orientação ;
-Ter cadastro no sistema e estar apto para orientar;
-O professor poderá estar disponível ou não para orientação;
-
 			 */
-			
+			public void sugestoesTema(String tema) {
+				sugestoesTema.add(tema);
+			}
 			public boolean ifOrientable() {
-				return f;
+				return false;
 			}
 			
 			public void OrientProject () {
 				
 			}
+			
 		}
