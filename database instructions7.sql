@@ -5,15 +5,19 @@ Por favor edite os comandos aqui, nao insira tudo de uma vez
 
 create database lsi-tccmanager;
 
-create table professor (
-	idprofessor serial,
-	nome varchar(100),
+create table Professores(
+	idProfessor serial not null,
+	matricula_professor int,
+	cpf int,
+	curso varchar (20),
+	senha varchar (12),
 	
-	cons
+	constraint professor_pk primary key (idProfessor)
 );
 
 
-create table aluno (
+
+create table Alunos (
 	idaluno serial,
 	nome varchar(100),
 	curso varchar(100),
@@ -22,14 +26,23 @@ create table aluno (
 );
 
 create table usuario (
+	codigo serial,
+	nome varchar(100),
+	email varchar(50),
+	curso varchar(50),
+	tipo int,
 	
+	constraint iduser_pk primary key (codigo)
 );
+
+/* acoplamento forte
+*/
 
 create table Projeto (
 	idprojeto serial,
-	tema varchar(100)
+	tema varchar(100),
 	
-	constraint idprojeto_pk primary key (idprojeto)
+	constraint data_professor_fk foreign key (idProfessor) references Professores(idProfessor)
 );
 
 create table TarefasHorario (
@@ -46,9 +59,13 @@ create table Orientacao (
 
 );
 
+
 /*
 Modelos de CRUD : adicao de valores :
 insert into 
 modelo para recuperar valores :
 
+
+anotacoes
+delete table cr
 */
