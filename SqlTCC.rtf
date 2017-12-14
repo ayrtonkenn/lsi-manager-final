@@ -3,14 +3,13 @@
 create table Professores(\par
 idProfessor serial not null,\par
 matricula_professor int,\par
-cpf int,\par
 curso varchar (20),\par
 senha varchar (12),\par
 constraint professor_pk primary key (idProfessor));\par
 \par
 create table Alunos(\par
 idAluno serial not null,\par
-idProfessor int,
+idProfessor int,\par
 matricula int ,\par
 email varchar (50),\par
 curso varchar (20),\par
