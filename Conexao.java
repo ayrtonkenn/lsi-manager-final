@@ -1,4 +1,4 @@
-package br.com.lsi;
+package CadastrarUsuario;
 
 import java.sql.DriverManager;
 import java.sql.ResultSet;

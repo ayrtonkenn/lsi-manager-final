@@ -1,6 +1,8 @@
-package br.com.lsi;
+package CadastrarUsuario;
+
 import java.util.ArrayList;
-import java.util.Date;
+
+
 
 public class Professor extends Pessoa{
 	

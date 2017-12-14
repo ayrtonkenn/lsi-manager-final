@@ -1,8 +1,10 @@
-package br.com.lsi;
+package CadastrarUsuario;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ProfessorDao extends Conexao
 {	public void createProfessor(Professor professor) throws ClassNotFoundException, SQLException {
@@ -56,6 +58,55 @@ public class ProfessorDao extends Conexao
 			return null; 
 			
 		}
+	
+		public List buscarProfessores() throws ClassNotFoundException, SQLException {
+			
+	    	String sql = "select nome and matricula_professor from Professores";
+			ArrayList<Professor> professores = new ArrayList<Professor>();
 
+		    try(java.sql.PreparedStatement preparedStatement = con.prepareStatement(sql)){
+		    	ResultSet result = preparedStatement.executeQuery();
+		    	
+				while(result.next()){
+					Professor professor = new Professor();
+					professor.setNome(result.getString("nome"));
+					professor.setEmail(result.getString("email"));
+					professor.setCurso(result.getString("curso"));
+					professor.setMatricula(result.getInt("matricula_professor"));
 
-}
+		
+		
+					professores.add(professor);
+				}
+		
+			} catch (SQLException e) {
+		
+				e.printStackTrace();
+			}
+		return professores;
+		}
+		
+	public List buscarProjetos() throws ClassNotFoundException, SQLException {
+				
+		    	String sql = "select titulo from Projetos";
+				ArrayList<Projeto> projetos = new ArrayList<Projeto>();
+	
+			    try(java.sql.PreparedStatement preparedStatement = con.prepareStatement(sql)){
+			    	ResultSet result = preparedStatement.executeQuery();
+			    	
+					while(result.next()){
+						Projeto projeto = new Projeto();
+						projeto.setTitulo(result.getString("titulo"));
+			
+						projetos.add(projeto);
+					}
+			
+				} catch (SQLException e) {
+			
+					e.printStackTrace();
+				}
+			return projetos;
+			}
+			
+	
+	}

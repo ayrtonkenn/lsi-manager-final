@@ -1,4 +1,4 @@
-package br.com.lsi;
+package CadastrarUsuario;
 
 public class Atendimento 
 {

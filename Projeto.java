@@ -1,27 +1,25 @@
-package br.com.lsi;
+package CadastrarUsuario;
 
 public class Projeto {
 			
 			private Professor orientador;
 			private String titulo;
 			
-			
-			/*
-			 * RF3 
-			 * 
-			 * 
-O professor deve poder alterar a sua disponibilidade para orientação no sistema;
-O docente, ao acessar a sua pagina de login, deve ser capaz de colocar se está disponível ou não para orientação ;
-Ter cadastro no sistema e estar apto para orientar;
-O professor poderá estar disponível ou não para orientação;
-
-			 */
-			
-			public boolean ifOrientable() {
-				return f;
+			public Professor getOrientador() {
+				return orientador;
+			}
+			public void setOrientador(Professor orientador) {
+				this.orientador = orientador;
+			}
+			public String getTitulo() {
+				return titulo;
+			}
+			public void setTitulo(String titulo) {
+				this.titulo = titulo;
 			}
 			
-			public void OrientProject () {
-				
-			}
+			
+			
+			
+			
 		}

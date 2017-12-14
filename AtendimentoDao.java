@@ -1,4 +1,4 @@
-package br.com.lsi;
+package CadastrarUsuario;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

@@ -1,4 +1,4 @@
-package br.com.lsi;
+package CadastrarUsuario;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -15,6 +15,20 @@ public class AlunoDao extends Conexao
 		preparedStatement.setString(3, aluno.getSenha());
 		preparedStatement.setInt(4, aluno.getMatricula());
 		preparedStatement.setString(5, aluno.getEmail());
+		preparedStatement.execute();
+	}catch(SQLException e){
+		e.printStackTrace();
+	}
+}
+public void cadastrarCliente(Usuario usuario) throws SQLException {
+	
+	
+    String sql = "insert into Usuarios(nome, email,curso)values(?, ?, ?)";
+    
+    try(PreparedStatement preparedStatement = con.prepareStatement(sql)){
+		preparedStatement.setString(1, Usuario.getNome());
+		preparedStatement.setString(2, Usuario.getEmail());
+		preparedStatement.setString(3, Usuario.getCurso());
 		preparedStatement.execute();
 	}catch(SQLException e){
 		e.printStackTrace();
@@ -53,6 +67,10 @@ public class AlunoDao extends Conexao
 				e.printStackTrace();
 		}
 			return null; 
+			
+		}
+		public void cadastrarCliente() {
+			// TODO Auto-generated method stub
 			
 		}
 
