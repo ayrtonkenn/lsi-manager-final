@@ -38,7 +38,8 @@ create table TarefasHorario (
 	dataproj calendar,
 	descricao varchar(100),
 	
-	..
+	constraint thAlun_fk foreign key references aluno(idaluno) ON DELETE cascade,
+	
 );
 
 create table Orientacao (
